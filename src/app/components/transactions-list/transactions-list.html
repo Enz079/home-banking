@@ -1,1 +1,9 @@
-<p>transactions-list works!</p>
+<div>
+    <h2>Transactions List</h2>
+    <p>Here you can view your recent transactions.</p>
+    <ul>
+        <li *ngFor="let transaction of transactions">
+            {{ transaction.date }} - {{ transaction.type }} - {{ transaction.amount }} {{ transaction.currency }}
+        </li>
+    </ul>
+</div>

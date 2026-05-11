@@ -3,7 +3,7 @@
     <p>Here you can deposit funds into your account.</p>
     <form (ngSubmit)="onDeposit()">
         <label for="amount">Amount: </label>
-        <input type="number" id="amount" name="amount" required>
+        <input type="number" id="amount" name="amount" required min="5">
         <select name="currency" id="currency" required>
             <option value="USD">USD</option>
             <option value="EUR">EUR</option>
