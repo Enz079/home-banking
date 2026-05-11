@@ -1,0 +1,41 @@
+div {
+  max-width: 800px;
+  margin: 2rem auto;
+  padding: 2rem;
+  background-color: #ffffff;
+  border-radius: 0.5rem;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+h2 {
+  color: #343a40;
+  margin-bottom: 1rem;
+  text-align: center;
+}
+
+p {
+  color: #6c757d;
+  margin-bottom: 2rem;
+  text-align: center;
+}
+
+ul {
+  list-style: none;
+  padding: 0;
+}
+
+li {
+  padding: 1rem;
+  border-bottom: 1px solid #dee2e6;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+li:last-child {
+  border-bottom: none;
+}
+
+li:nth-child(even) {
+  background-color: #f8f9fa;
+}

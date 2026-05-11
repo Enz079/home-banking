@@ -1,0 +1,21 @@
+div {
+  max-width: 600px;
+  margin: 2rem auto;
+  padding: 2rem;
+  background-color: #ffffff;
+  border-radius: 0.5rem;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  text-align: center;
+}
+
+h2 {
+  color: #343a40;
+  margin-bottom: 1rem;
+  font-size: 2rem;
+}
+
+p {
+  color: #6c757d;
+  font-size: 1.2rem;
+  margin: 0;
+}
