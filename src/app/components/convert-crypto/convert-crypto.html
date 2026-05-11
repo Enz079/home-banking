@@ -1,1 +1,26 @@
-<p>convert-crypto works!</p>
+<div>
+    <h2>Convert Crypto</h2>
+    <p>Convert between different cryptocurrencies.</p>
+    <form (ngSubmit)="onConvert()">
+        <label for="fromCrypto">From:</label>
+        <select id="fromCrypto" name="fromCrypto" required>
+            <option value="BTC">Bitcoin (BTC)</option>
+            <option value="ETH">Ethereum (ETH)</option>
+            <option value="ADA">Cardano (ADA)</option>
+            <option value="SOL">Solana (SOL)</option>
+        </select>
+
+        <label for="toCrypto">To:</label>
+        <select id="toCrypto" name="toCrypto" required>
+            <option value="BTC">Bitcoin (BTC)</option>
+            <option value="ETH">Ethereum (ETH)</option>
+            <option value="ADA">Cardano (ADA)</option>
+            <option value="SOL">Solana (SOL)</option>
+        </select>
+
+        <label for="amount">Amount:</label>
+        <input type="number" id="amount" name="amount" [(ngModel)]="cryptoAmount" required min="0.0001" step="0.0001">
+
+        <button type="submit">Convert</button>
+    </form>
+</div>
