@@ -1,5 +1,6 @@
 import { CommonModule } from '@angular/common';
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
+import { BankingApi, Transaction } from '../../services/banking-api';
 
 @Component({
   selector: 'app-transactions-list',
@@ -7,13 +8,29 @@ import { Component } from '@angular/core';
   templateUrl: './transactions-list.html',
   styleUrl: './transactions-list.css',
 })
-export class TransactionsList {
+export class TransactionsList implements OnInit {
 
-  transactions = [
-    { date: '11-05-2026', type: 'Deposit', amount: 100, currency: 'USD' },
-    { date: '12-05-2026', type: 'Withdrawal', amount: 50, currency: 'USD' },
-    { date: '13-05-2026', type: 'Deposit', amount: 200, currency: 'USD' },
-  ];
+  transactions: Transaction[] = [];
+  loading = true;
+
+  constructor(private bankingApi: BankingApi) {}
+
+  ngOnInit() {
+    this.loadTransactions();
+  }
+
+  loadTransactions() {
+    this.bankingApi.getTransactions().subscribe({
+      next: (data: Transaction[]) => {
+        this.transactions = data;
+        this.loading = false;
+      },
+      error: (err) => {
+        console.error('Error loading transactions:', err);
+        this.loading = false;
+      }
+    });
+  }
 
   onViewTransactions() {
     console.log('Viewing transactions:', this.transactions);

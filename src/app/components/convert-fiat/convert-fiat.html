@@ -3,14 +3,14 @@
     <p>Convert fiat currency to cryptocurrency.</p>
     <form (ngSubmit)="onConvert()">
         <label for="fromFiat">From:</label>
-        <select id="fromFiat" name="fromFiat" required>
+        <select id="fromFiat" name="fromFiat" [(ngModel)]="fromCurrency" required>
             <option value="USD">USD</option>
             <option value="EUR">EUR</option>
             <option value="GBP">GBP</option>
         </select>
 
         <label for="toCrypto">To:</label>
-        <select id="toCrypto" name="toCrypto" required>
+        <select id="toCrypto" name="toCrypto" [(ngModel)]="toCurrency" required>
             <option value="BTC">Bitcoin (BTC)</option>
             <option value="ETH">Ethereum (ETH)</option>
             <option value="ADA">Cardano (ADA)</option>

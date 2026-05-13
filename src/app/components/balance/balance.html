@@ -1,4 +1,10 @@
 <div>
     <h2>Balance</h2>
-    <p>Your current balance is: </p><h3>{{ balance | currency }}</h3>
+    <ng-container *ngIf="balance !== null; else loading">
+      <p>Your current balance is:</p>
+      <h3>{{ balance | currency:currency }}</h3>
+    </ng-container>
+    <ng-template #loading>
+      <p>Loading balance...</p>
+    </ng-template>
 </div>

@@ -2,11 +2,19 @@
     <h2>Transactions List</h2>
     <p>Here you can view your recent transactions.</p>
     
-    <div>
-        <ul>
-            <li *ngFor="let transaction of transactions">
-                {{ transaction.date }} - {{ transaction.type }} - {{ transaction.amount }} {{ transaction.currency }}
-            </li>
-        </ul>
+    <div *ngIf="loading">
+      <p>Loading transactions...</p>
+    </div>
+
+    <div *ngIf="!loading && transactions.length === 0">
+      <p>No transactions found.</p>
+    </div>
+
+    <div *ngIf="!loading && transactions.length > 0">
+      <ul>
+        <li *ngFor="let transaction of transactions">
+            {{ transaction.date }} - {{ transaction.type }} - {{ transaction.amount }} {{ transaction.currency }}
+        </li>
+      </ul>
     </div>
 </div>

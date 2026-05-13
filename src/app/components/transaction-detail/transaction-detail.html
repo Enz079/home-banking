@@ -1,1 +1,11 @@
-<p>transaction-detail works!</p>
+<div *ngIf="transaction">
+  <h2>Transaction Detail</h2>
+  <p><strong>ID:</strong> {{ transaction!.id }}</p>
+  <p><strong>Type:</strong> {{ transaction!.type }}</p>
+  <p><strong>Amount:</strong> {{ transaction!.amount }}</p>
+  <p><strong>Date:</strong> {{ transaction!.date }}</p>
+  <p><strong>Description:</strong> {{ transaction!.description }}</p>
+</div>
+<div *ngIf="!transaction">
+  <p>Loading transaction...</p>
+</div>

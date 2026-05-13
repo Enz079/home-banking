@@ -3,7 +3,7 @@
     <p>Convert between different cryptocurrencies.</p>
     <form (ngSubmit)="onConvert()">
         <label for="fromCrypto">From:</label>
-        <select id="fromCrypto" name="fromCrypto" required>
+        <select id="fromCrypto" name="fromCrypto" [(ngModel)]="fromCrypto" required>
             <option value="BTC">Bitcoin (BTC)</option>
             <option value="ETH">Ethereum (ETH)</option>
             <option value="ADA">Cardano (ADA)</option>
@@ -11,7 +11,7 @@
         </select>
 
         <label for="toCrypto">To:</label>
-        <select id="toCrypto" name="toCrypto" required>
+        <select id="toCrypto" name="toCrypto" [(ngModel)]="toCrypto" required>
             <option value="BTC">Bitcoin (BTC)</option>
             <option value="ETH">Ethereum (ETH)</option>
             <option value="ADA">Cardano (ADA)</option>
