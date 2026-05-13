@@ -34,7 +34,7 @@ export interface ConversionRequest {
   providedIn: 'root',
 })
 export class BankingApi {
-  private baseUrl = 'http://localhost:3000/api';
+  private baseUrl = '/accounts';
 
   constructor(private http: HttpClient) {}
 
