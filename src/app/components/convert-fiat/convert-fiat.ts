@@ -22,10 +22,10 @@ export class ConvertFiat {
   ) {}
 
   onConvert() {
-    if (this.fiatAmount > 0) {
-      this.bankingApi.convertFiat({ from: this.fromCurrency, to: this.toCurrency, amount: this.fiatAmount }).subscribe({
+    if (this.toCurrency) {
+      this.bankingApi.convertFiat({ to: this.toCurrency }).subscribe({
         next: () => {
-          this.flashMessageService.show(`Converted ${this.fiatAmount} ${this.fromCurrency} to ${this.toCurrency} successfully!`);
+          this.flashMessageService.show(`Converted account balance to ${this.toCurrency} successfully!`);
           this.fiatAmount = 0;
         },
         error: (err) => {

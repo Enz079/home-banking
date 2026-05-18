@@ -13,7 +13,6 @@ import { FlashMessageService } from '../../services/flash-message.service';
 export class Withdrawal {
 
   withdrawalAmount: number = 0;
-  currency: string = 'USD';
 
   constructor(
     private bankingApi: BankingApi,
@@ -22,9 +21,9 @@ export class Withdrawal {
 
   onWithdraw() {
     if (this.withdrawalAmount > 0) {
-      this.bankingApi.withdraw({ amount: this.withdrawalAmount }).subscribe({
+      this.bankingApi.withdraw({ amount: this.withdrawalAmount, description: 'Withdrawal from frontend' }).subscribe({
         next: () => {
-          const message = `Withdrew ${this.withdrawalAmount} ${this.currency} successfully!`;
+          const message = `Withdrew ${this.withdrawalAmount} successfully!`;
           this.flashMessageService.show(message);
           this.withdrawalAmount = 0;
         },

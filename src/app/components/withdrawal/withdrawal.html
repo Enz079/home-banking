@@ -4,11 +4,7 @@
     <form (ngSubmit)="onWithdraw()">
         <label for="amount">Amount: </label>
         <input type="number" id="amount" name="amount" [(ngModel)]="withdrawalAmount" required min="5">
-        <select name="currency" id="currency" [(ngModel)]="currency" required>
-            <option value="USD">USD</option>
-            <option value="EUR">EUR</option>
-            <option value="GBP">GBP</option>
-        </select>
+        <p>Withdrawal will be processed in account currency.</p>
         <button type="submit">Withdraw</button>
     </form>
 </div>

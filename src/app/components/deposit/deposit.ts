@@ -13,7 +13,6 @@ import { FlashMessageService } from '../../services/flash-message.service';
 export class Deposit {
 
   depositAmount: number = 0;
-  currency: string = 'USD';
 
   constructor(
     private bankingApi: BankingApi,
@@ -22,9 +21,9 @@ export class Deposit {
 
   onDeposit() {
     if (this.depositAmount > 0) {
-      this.bankingApi.deposit({ amount: this.depositAmount }).subscribe({
+      this.bankingApi.deposit({ amount: this.depositAmount, description: 'Deposit from frontend' }).subscribe({
         next: () => {
-          const message = `Deposited ${this.depositAmount} ${this.currency} successfully!`;
+          const message = `Deposited ${this.depositAmount} successfully!`;
           this.flashMessageService.show(message);
           this.depositAmount = 0;
         },

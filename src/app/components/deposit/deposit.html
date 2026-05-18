@@ -4,11 +4,7 @@
     <form (ngSubmit)="onDeposit()">
         <label for="amount">Amount: </label>
         <input type="number" id="amount" name="amount" [(ngModel)]="depositAmount" required min="5">
-        <select name="currency" id="currency" [(ngModel)]="currency" required>
-            <option value="USD">USD</option>
-            <option value="EUR">EUR</option>
-            <option value="GBP">GBP</option>
-        </select>
-            <button type="submit">Deposit</button>
+        <p>Deposit will be recorded in account currency.</p>
+        <button type="submit">Deposit</button>
     </form>
 </div>

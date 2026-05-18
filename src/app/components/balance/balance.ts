@@ -21,8 +21,8 @@ export class Balance implements OnInit {
 
   loadBalance() {
     this.bankingApi.getBalance().subscribe((data: BalanceData) => {
-      this.balance = data.amount;
-      this.currency = data.currency;
+      this.balance = data.balance;
+      this.currency = data.currency || 'EUR';
     });
   }
 

@@ -22,10 +22,10 @@ export class ConvertCrypto {
   ) {}
 
   onConvert() {
-    if (this.cryptoAmount > 0) {
-      this.bankingApi.convertCrypto({ from: this.fromCrypto, to: this.toCrypto, amount: this.cryptoAmount }).subscribe({
+    if (this.toCrypto) {
+      this.bankingApi.convertCrypto({ to: this.toCrypto }).subscribe({
         next: () => {
-          this.flashMessageService.show(`Converted ${this.cryptoAmount} ${this.fromCrypto} to ${this.toCrypto} successfully!`);
+          this.flashMessageService.show(`Converted account balance to ${this.toCrypto} successfully!`);
           this.cryptoAmount = 0;
         },
         error: (err) => {

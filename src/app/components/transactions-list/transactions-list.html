@@ -13,7 +13,7 @@
     <div *ngIf="!loading && transactions.length > 0">
       <ul>
         <li *ngFor="let transaction of transactions">
-            {{ transaction.date }} - {{ transaction.type }} - {{ transaction.amount }} {{ transaction.currency }}
+            {{ transaction.created_at || transaction.date }} - {{ transaction.type }} - {{ transaction.amount }} {{ transaction.currency || '' }}
         </li>
       </ul>
     </div>
