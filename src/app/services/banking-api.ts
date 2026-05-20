@@ -58,11 +58,11 @@ export class BankingApi {
   }
 
   deposit(request: DepositRequest): Observable<any> {
-    return this.http.post(`${this.accountUrl()}/deposits`, request);
+    return this.http.post(`${this.accountUrl()}/deposit`, request);
   }
 
   withdraw(request: WithdrawalRequest): Observable<any> {
-    return this.http.post(`${this.accountUrl()}/withdrawals`, request);
+    return this.http.post(`${this.accountUrl()}/withdrawal`, request);
   }
 
   convertFiat(request: ConversionRequest): Observable<any> {
